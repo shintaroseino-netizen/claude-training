@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自己紹介 - 清野晋太郎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #2fb0c7;
+    --mint: #4fd1a5;
+    --ink: #1f3a3d;
+    --ink-muted: rgba(31, 58, 61, 0.6);
+    --card: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(47, 176, 199, 0.25);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 20px;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 12% 15%, rgba(79, 209, 165, 0.25), transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(47, 176, 199, 0.22), transparent 50%),
+      linear-gradient(160deg, #eafffa 0%, #e3f6fb 55%, #eefcf5 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(47, 176, 199, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47, 176, 199, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at 50% 40%, black, transparent 75%);
+    pointer-events: none;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 56px 44px 44px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+      0 30px 60px rgba(47, 176, 199, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    text-align: center;
+    animation: rise 0.7s ease-out;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--sky);
+    margin-bottom: 22px;
+  }
+
+  .avatar {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(150deg, var(--mint), var(--sky) 70%);
+    box-shadow: 0 12px 30px rgba(47, 176, 199, 0.35);
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
+  .reading {
+    color: var(--ink-muted);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    margin: 0 0 32px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    margin: 0 auto 32px;
+    background: linear-gradient(90deg, transparent, var(--sky), transparent);
+  }
+
+  .info-list {
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: rgba(47, 176, 199, 0.05);
+    border: 1px solid rgba(47, 176, 199, 0.14);
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .info-list li:hover {
+    border-color: rgba(47, 176, 199, 0.4);
+    background: rgba(47, 176, 199, 0.1);
+  }
+
+  .info-label {
+    flex-shrink: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--sky);
+    min-width: 84px;
+  }
+
+  .info-value {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .message {
+    position: relative;
+    border-radius: 16px;
+    padding: 24px 22px;
+    background: linear-gradient(150deg, rgba(79, 209, 165, 0.16), rgba(47, 176, 199, 0.05));
+    border: 1px solid rgba(79, 209, 165, 0.3);
+  }
+
+  .message h2 {
+    margin: 0 0 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sky);
+  }
+
+  .message p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="eyebrow">Introduction</p>
+    <div class="avatar">清</div>
+    <h1>清野晋太郎</h1>
+    <p class="reading">せいの しんたろう</p>
+    <div class="divider"></div>
+
+    <ul class="info-list">
+      <li>
+        <span class="info-label">所属</span>
+        <span class="info-value">RPO事業部</span>
+      </li>
+      <li>
+        <span class="info-label">最近の興味</span>
+        <span class="info-value">VIVANTと豊臣兄弟を観ること</span>
+      </li>
+    </ul>
+
+    <div class="message">
+      <h2>今後の意気込み</h2>
+      <p>日々学びながら、着実に成果を出せるよう頑張ります!</p>
+    </div>
+  </div>
+</body>
+</html>
